@@ -1,5 +1,4 @@
 import streamlit as st
-<<<<<<< HEAD
 import openai
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -7,14 +6,11 @@ import os
 from deepgram import DeepgramClient, PrerecordedOptions
 from pydub import AudioSegment
 from io import BytesIO
-=======
->>>>>>> parent of f144aa6 (txt summery)
 
 st.title("Physio session summary")
 
 uploaded_file = st.file_uploader("Choose a file (mp3 or TXT)", type=["mp3", "txt"])
 
-<<<<<<< HEAD
 
 DEEPGRAM_API_KEY = '91fbd5d2589108fad6177d84435fe94f5518af52'
 
@@ -80,11 +76,9 @@ if uploaded_file is not None:
                 st.write("Transcription not found in response.")
     else:
         st.write("Please upload an MP3 file or a txt file to display the session summery")
-=======
 # Check if a file is uploaded
 if uploaded_file is not None:
     # Display the file name
     st.write("Uploaded file name:", uploaded_file.name)
 else:
     st.write("Please upload an MP3 file to display its name.")
->>>>>>> parent of f144aa6 (txt summery)
