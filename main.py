@@ -9,6 +9,18 @@ from io import BytesIO
 
 st.title("Physio session summary")
 
+if 'OPEN_API_KEY' in st.secrets:
+    st.success('Proceed to load your file')
+    openai.api_key = st.secrets['OPEN_API_KEY']
+else:
+    openai.api_key = st.text_input('Enter OpenAI API key:', type='password')
+    if not (openai.api_key.dtsrtswith('sk-') and len(openai.api_key)==51):
+        st.warning('Please enter your credentials')
+    else:
+        st.success('Proceed to load your file')
+
+
+
 uploaded_file = st.file_uploader("Choose a file (mp3 or TXT)", type=["mp3", "txt"])
 
 
