@@ -1,10 +1,7 @@
 import streamlit as st
 import openai
 from pydantic import BaseModel
-from dotenv import load_dotenv
-import os
 from deepgram import DeepgramClient, PrerecordedOptions
-from pydub import AudioSegment
 from io import BytesIO
 
 st.title("Physio session summary")
@@ -16,12 +13,9 @@ with st.sidebar:
     else:
         st.success('Proceed to load your file')
 
-
+DEEPGRAM_API_KEY = '91fbd5d2589108fad6177d84435fe94f5518af52'
 
 uploaded_file = st.file_uploader("Choose a file (mp3 or TXT)", type=["mp3", "txt"])
-
-
-DEEPGRAM_API_KEY = '91fbd5d2589108fad6177d84435fe94f5518af52'
 
 class ConversationSummary(BaseModel):
     patient_report: str
