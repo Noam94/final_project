@@ -79,9 +79,3 @@ if uploaded_file is not None:
                 st.write("Transcription not found in response.")
     else:
         st.write("Please upload an MP3 file or a txt file to display the session summary")
-# Check if a file is uploaded
-#if uploaded_file is not None:
-    # Display the file name
- #   st.write("Uploaded file name:", uploaded_file.name)
-#else:
- #   st.write("Please upload an MP3 or a txt file to display the session summary")
