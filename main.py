@@ -51,7 +51,7 @@ if uploaded_file is not None:
         # Read and save the content of the text file
         text_content = uploaded_file.read().decode("utf-8")
         summary = summarize_conversation(text_content)
-        st.header("Summery of the Physio-patient conversation:")
+        st.header("Summary of the Physio-patient conversation:")
         st.write(summary)
     if uploaded_file.name.endswith(".mp3"):
         # play file
@@ -78,10 +78,10 @@ if uploaded_file is not None:
             except KeyError:
                 st.write("Transcription not found in response.")
     else:
-        st.write("Please upload an MP3 file or a txt file to display the session summery")
+        st.write("Please upload an MP3 file or a txt file to display the session summary")
 # Check if a file is uploaded
 if uploaded_file is not None:
     # Display the file name
     st.write("Uploaded file name:", uploaded_file.name)
 else:
-    st.write("Please upload an MP3 file to display its name.")
+    st.write("Please upload an MP3 or a txt file to display the session summary")
